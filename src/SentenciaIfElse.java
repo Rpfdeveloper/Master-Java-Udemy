@@ -1,4 +1,4 @@
-public class SentenciaIfElse {
+public class  SentenciaIfElse {
     public static void main(String[] args) {
 
         float promedio = 5.5f;

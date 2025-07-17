@@ -23,14 +23,18 @@ public class EjemploVariablesDeEntorno {
         System.out.println("temDir = " + temDir);
 
         String path = System.getenv("Path");
-        System.out.println("path = " + path);
+        System.out.println("Path = " + path);
 
         String path2 = varEnv.get("Path");
-        System.out.println("PATH = " + path2);
+        System.out.println("Path2 = " + path2);
 
+        //Antes creamos la variable de entorno siguiente mediante la interface gráfica de windows.
         String appEnv = varEnv.get("APPLICATION_ENV");
         System.out.println("appEnv = " + appEnv);
 
+        //en terminal con el comando setx SALUDAR_HOLA Hola amigos que tal creamos esta variable de entorno con su valor.
+
+        //Aqui realizamos un get para verlo en consola imprimiendo la variable hola con la asignación previa.
         String hola = varEnv.get("SALUDAR_HOLA");
         System.out.println("appEnv = " + hola);
     }

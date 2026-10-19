@@ -2,8 +2,9 @@ public class ArgumentosLineaDeComandoCalculadora {
     public static void main(String[] args) {
 
         if (args.length != 3) {
-            System.out.println("Por favor ingresar una operación" + "(suma, resta, multi o div) y dos enteros");
-
+            System.err.println("Uso: ArgumentosLineaDeComandoCalculadora <suma|resta|multi|div> <entero> <entero>");
+            System.exit(2);
+            return;
         }
         String operacion = args[0];
         int a = 0;
@@ -16,27 +17,32 @@ public class ArgumentosLineaDeComandoCalculadora {
             resultado = 0.00;
         } catch (NumberFormatException e) {
             System.err.println("Cuidado, a y b deben ser enteros, vuelva a intentar!");
-            System.exit(-1);
+            System.exit(2);
+            return;
         }
         switch (operacion) {
             case "suma":
-                resultado = a + b;
+                resultado = (double) a + b;
                 break;
             case "resta":
-                resultado = a - b;
+                resultado = (double) a - b;
                 break;
+            case "multi":
             case "multiplicación":
-                resultado = a * b;
+                resultado = (double) a * b;
                 break;
             case "div":
                 if (b == 0) {
-                    System.out.println("No se puede divider entre cero");
-                    System.exit(-1);
+                    System.err.println("No se puede dividir entre cero");
+                    System.exit(2);
+                    return;
                 }
                 resultado = (double) a / b;
                 break;
             default:
-                resultado = a + b;
+                System.err.println("Operación desconocida: " + operacion);
+                System.exit(2);
+                return;
         }
 
         System.out.println("El resultado de la operación '" + operacion + "' es: " + resultado);

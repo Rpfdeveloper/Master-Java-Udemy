@@ -64,6 +64,10 @@ Se comprueban cuatro operaciones, el alias de multiplicación, números negativo
 
 **Validación realizada:** los 58 archivos compilan con Java 17 y pasan las cinco pruebas de regresión, con 18 casos de entrada. La compilación muestra avisos de operaciones genéricas sin comprobar en un ejercicio del curso; no se ha certificado el comportamiento de todos los ejemplos.
 
+## Comprobación automática
+
+El workflow [Java examples](https://github.com/Rpfdeveloper/Master-Java-Udemy/actions) está configurado para compilar toda la colección y ejecutar las cinco pruebas de la calculadora en cada push y pull request con JDK 17 y Python 3. Las pruebas ejecutan la clase real; las restantes clases se comprueban por compilación, sin afirmar su validación funcional.
+
 ## Contexto y autoría
 
 Repositorio de formación de [Roberto Pajuelo · Rpfdeveloper](https://github.com/Rpfdeveloper). Los ejemplos se basan en el curso; la mejora posterior de la calculadora y sus pruebas están identificadas en el historial de cambios. Esta revisión se ha realizado con asistencia de IA.

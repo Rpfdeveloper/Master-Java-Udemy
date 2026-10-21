@@ -1,5 +1,7 @@
 # Fundamentos de Java · Ejercicios de formación
 
+[![Java examples](https://github.com/Rpfdeveloper/Master-Java-Udemy/actions/workflows/java-examples.yml/badge.svg?branch=main)](https://github.com/Rpfdeveloper/Master-Java-Udemy/actions/workflows/java-examples.yml)
+
 **Java · Consola · Control de flujo · Strings · Fechas · Validación de entradas**
 
 Colección de **58 archivos Java** realizados durante mi formación con un curso de Udemy. Este repositorio documenta mi práctica de los fundamentos del lenguaje; los ejercicios están vinculados al curso y no se presentan como aplicaciones profesionales originales.
@@ -49,6 +51,23 @@ javac -encoding UTF-8 -d build/classes $fuentesJava
 ```bash
 javac -encoding UTF-8 -d build/classes src/*.java
 ```
+
+### Ejemplo que necesita un archivo de propiedades
+
+[`EjemploAsignarPropiedadesDeSistema`](src/EjemploAsignarPropiedadesDeSistema.java) intenta leer `src/config2.properties`, que no está incluido en el repositorio. Para ejecutarlo con los datos de ejemplo de [`src/config.properties`](src/config.properties), prepara una copia desde la raíz del proyecto:
+
+| Entorno | Comando |
+| --- | --- |
+| Windows PowerShell | `Copy-Item -Path src/config.properties -Destination src/config2.properties` |
+| Linux / macOS | `cp src/config.properties src/config2.properties` |
+
+Después de compilar la colección, ejecuta desde esa misma raíz:
+
+```bash
+java -cp build/classes EjemploAsignarPropiedadesDeSistema
+```
+
+Sin ese archivo, el ejemplo captura `FileNotFoundException`, muestra el error y termina con código `1`. Con la copia del archivo de ejemplo se ha comprobado la ejecución con Java 17. Los demás ejercicios pueden requerir entrada interactiva o herramientas del sistema operativo; la compilación de la colección no acredita su funcionamiento completo.
 
 ## Pruebas de la calculadora
 
